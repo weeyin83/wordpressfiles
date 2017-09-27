@@ -19,6 +19,7 @@
  */
 
 /** enable SSL to Azure MySQL */
+define( 'MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL | MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT );
 define('MYSQL_SSL_CA', '/etc/ssl/certs/Baltimore_CyberTrust_Root.pem');
 
 /** The name of the database for WordPress */
