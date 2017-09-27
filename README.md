@@ -1,16 +1,6 @@
 ## WordPress Files
-* WordPress 4.7.5 Files
-* Patched to support Azure MySQL service
+* WordPress 4.8.2 Files
 * WordPress config (wp-config.php) added
-
-## WordPress Patch
-* html/wp-includes/wp-db.php is patched to support SSL to Azure MySQL  
-    Make sure to patch the file if you use a separate repo as this file is part of the WordPress distribution
-```
-if ( defined('MYSQL_SSL_CA')) {
-        mysqli_ssl_set($this->dbh,NULL,NULL,MYSQL_SSL_CA,NULL,NULL);
-}
-```
 
 ## WordPress Config
 * Added html/wp-config.php
@@ -18,6 +8,7 @@ if ( defined('MYSQL_SSL_CA')) {
 
 * wp-config defines MYSQL_SSL_CA to support SSL to the Azure MySQL service
 ```
+define( 'MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL | MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT );
 define('MYSQL_SSL_CA', '/etc/ssl/certs/Baltimore_CyberTrust_Root.pem');
 ```
 
@@ -46,5 +37,3 @@ if(strtolower(getenv('FORCE_SSL')) == 'true' && $_SERVER['HTTPS'] != 'on' && emp
     exit();
 }
 ```
-
-
