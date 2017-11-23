@@ -51,7 +51,7 @@ define('DB_COLLATE', '');
  */
 define('AUTH_KEY',         'd906bdec6cfddcd9d8f04fd8d31c846213efe91a');
 define('SECURE_AUTH_KEY',  '1fe346ad7383bbd20f650b3a4ee54fdd05916c7a');
-define('LOGGED_IN_KEY',    '846c675058d59afb856c4c00379d756636c94a8c');
+define('WP_ALLOW_REPAIR', true);define('LOGGED_IN_KEY',    '846c675058d59afb856c4c00379d756636c94a8c');
 define('NONCE_KEY',        '3738296ce77b993ac79ec31f14311706fabda535');
 define('AUTH_SALT',        'bb6aee3fe97329436a4d9d1a4c7bd3a303dfd7e3');
 define('SECURE_AUTH_SALT', '778c7c0d69afe590f42548a29cdd9e76ff60171c');
