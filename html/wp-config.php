@@ -101,7 +101,7 @@ if(strtolower(getenv('FORCE_SSL')) == 'true' && $_SERVER['HTTPS'] != 'on' && emp
     exit();
 }
 
-
+define('WP_ALLOW_REPAIR', true);
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
