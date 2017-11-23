@@ -47,7 +47,8 @@ define('DB_COLLATE', '');
  * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
  * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
- * @since 2.6.0
+
+* @since 2.6.0
  */
 define('AUTH_KEY',         'd906bdec6cfddcd9d8f04fd8d31c846213efe91a');
 define('SECURE_AUTH_KEY',  '1fe346ad7383bbd20f650b3a4ee54fdd05916c7a');
@@ -80,7 +81,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 // If we're behind a proxy server and using HTTPS, we need to alert Wordpress of that fact
 // see also http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy
@@ -101,6 +102,21 @@ if(strtolower(getenv('FORCE_SSL')) == 'true' && $_SERVER['HTTPS'] != 'on' && emp
     exit();
 }
 
+//Enable WP_DEBUG mode
+define('WP_DEBUG', true);
+
+
+//Enable Debug Logging to /wp-content/debug.log
+define('WP_DEBUG_LOG', true);
+
+
+//Supress errors and warnings to screen
+define('WP_DEBUG_DISPLAY', false);
+
+//Supress PHP errors to screen
+ini_set('display_errors', 0);
+
+//Allow repair
 define('WP_ALLOW_REPAIR', true);
 /* That's all, stop editing! Happy blogging. */
 
